@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="WatchOutFitter" parallel="false">
+    <test name="WatchOutFitter">
+        <classes>
+            <class name="test.page.object.ContactUsTest">
+
+            </class>
+        </classes>
+    </test>
+
+   <parameter name="useCloudEnv" value="true"/>
+    <parameter name="useCloudEnvName" value="browserstack"/>
+    <parameter name="os_version" value="Mojave"/>
+   <parameter name="browserVersion" value="74.0"/>
+    <parameter name="os" value="mac"/>
+    <parameter name="url" value="https://www.watchoutfitters.com/"/>
+    <parameter name="browserName" value="chrome"/>
+
+
+
+
+</suite>

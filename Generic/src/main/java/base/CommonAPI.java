@@ -61,9 +61,9 @@ public class CommonAPI {
 
     }
 
-    @Parameters({"platform", "url", "browser", "cloud", "browserVersion", "envName"})
+    @Parameters({"platform", "url", "browser","useCloudEnv","browserVersion","useCloudEnvName"})
     @BeforeMethod
-    public static WebDriver setupDriver(String platform, String url, @Optional("chrome") String browser, @Optional("false") boolean cloud, String browserVersion, String envName) throws MalformedURLException {
+    public static WebDriver setupDriver(@Optional("mac") String platform,@Optional("https://www.watchoutfitters.com")String url, @Optional("chrome") String browser,@Optional("false") boolean cloud, @Optional("74.0") String browserVersion,@Optional("browserstack") String envName) throws MalformedURLException {
         if (cloud) {
             driver = getCloudDriver(browser, browserVersion, platform, envName);
         } else {
@@ -103,9 +103,9 @@ public class CommonAPI {
      */
     public static WebDriver getLocalDriver(String browser, String platform) {
         if (platform.equalsIgnoreCase("mac") && browser.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "../Generic/src/main/resources/drivers/chromedriver");
+            System.setProperty("webdriver.chrome.driver", "/Users/tawhidurislam/selenium/WebAutomation-Feb/Generic/src/main/resources/drivers/chromedriver 4");
         } else if (platform.equalsIgnoreCase("windows") && browser.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "../Generic/src/main/resources/drivers/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "/Users/tawhidurislam/selenium/WebAutomation-Feb/Generic/src/main/resources/drivers/chromedriver 3.exe");
         }
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
